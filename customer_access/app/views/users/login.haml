@@ -9,21 +9,18 @@
         %a.btn-style.btn-1{:href => "signup.html"}
           用户注册
       %br
-      .boxed-group-inner
-        = form_tag "/create_login_session" do
-          .input-prepend(style="90px" )
-            %span.add-on(style="90px" )
-              帐号
-            %input(style="text;width:338px" )
-          .input-prepend
-            %span.add-on(style="40px" )
-              密码
-            %input(style="text;width:338px" )
-          .text-right
-            %a.btn-style.btn-1
-              忘记密码
-        %br
-        .text-center
-          %a.btn-style.btn-primary()
-            登录
+        .input-prepend
+          %span.add-on(style="padding-bottom:2px;padding-top:1.7px")
+            帐号
+          %input(style="text;width:338px" )
+        .input-prepend
+          %span.add-on(style="padding-bottom:2px;padding-top:1.7px")
+            密码
+          %input(style="text;width:338px" )
+        .text-right
+          %a.btn-style.btn-1
+            忘记密码
+      .text-center
+        %button(class="btn btn-primary" style="width:150px" )
+          登录
 

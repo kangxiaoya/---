@@ -1,0 +1,36 @@
+.container(style="margin:50px 50px" )
+  .row
+    %h1
+      活动通
+  .row(style="width:1320px" )
+    .signup-box
+      %h4 新用户注册
+      .text-right
+        %a.btn-style.btn-1{:href => "login.html"}
+          用户登录
+      %br
+        .input-prepend
+          %span.add-on(style="width:84px;96px;padding-bottom:2px;padding-top:1.7px" )
+            帐号
+          %input(style="text;width:354px" )
+        .input-prepend
+          %span.add-on(style="width:84px;96px;padding-bottom:2px;padding-top:1.7px" )
+            请设置密码
+          %input(style="text;width:354px" )
+        .input-prepend
+          %span.add-on(style="width:84px;96px;padding-bottom:2px;padding-top:1.7px" )
+            请确认密码
+          %input(style="text;width:354px" )
+        .input-prepend
+          %span.add-on(style="width:84px;96px;padding-bottom:2px;padding-top:1.7px" )
+            忘记密码问题
+          %input(style="text;width:354px" )
+        .input-prepend
+          %span.add-on(style="width:84px;96px;padding-bottom:2px;padding-top:1.7px" )
+            忘记密码答案
+          %input(style="text;width:354px" )
+      %br
+      .text-center
+        %button(class="btn btn-primary" style="width:150px" )
+          注册
+
