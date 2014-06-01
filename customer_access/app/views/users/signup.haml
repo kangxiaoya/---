@@ -1,4 +1,4 @@
-.container(style="margin:50px 50px" )
+.container(style="margin:10px 50px" )
   .row
     %h1
       活动通
@@ -6,31 +6,42 @@
     .signup-box
       %h4 新用户注册
       .text-right
-        %a.btn-style.btn-1{:href => "login.html"}
-          用户登录
+        =link_to"用户登录",login_path
       %br
+      =form_for @user do |f|
+        %br
         .input-prepend
           %span.add-on(style="width:84px;96px;padding-bottom:2px;padding-top:1.7px" )
             帐号
+          =f.text_field :user_name, :class => 'form-control'
           %input(style="text;width:354px" )
         .input-prepend
           %span.add-on(style="width:84px;96px;padding-bottom:2px;padding-top:1.7px" )
             请设置密码
+          =f.password_field :password, :class => 'form-control'
           %input(style="text;width:354px" )
         .input-prepend
           %span.add-on(style="width:84px;96px;padding-bottom:2px;padding-top:1.7px" )
             请确认密码
+          =f.password_field :password_confirmation, :class => 'form-control'
           %input(style="text;width:354px" )
         .input-prepend
           %span.add-on(style="width:84px;96px;padding-bottom:2px;padding-top:1.7px" )
             忘记密码问题
+          =f.password_field :forget_password_question, :class => 'form-control'
           %input(style="text;width:354px" )
         .input-prepend
           %span.add-on(style="width:84px;96px;padding-bottom:2px;padding-top:1.7px" )
             忘记密码答案
+          =f.password_field :question_answer, :class => 'form-control'
           %input(style="text;width:354px" )
       %br
+      - if @user.errors.any?
+        .alert.alert-danger
+          =@user.errors.full_messages.first
+      %br
       .text-center
-        %button(class="btn btn-primary" style="width:150px" )
-          注册
+      f.submit"注册",:class=>"btn-primary"
+      注册
+
 

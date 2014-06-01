@@ -1,4 +1,4 @@
-.container(style="margin:50px 50px" )
+.container(style="margin:10px 50px" )
   .row
     %h1
       活动通
@@ -6,8 +6,7 @@
     .login-box
       %h4 用户登录
       .text-right
-        %a.btn-style.btn-1{:href => "signup.html"}
-          用户注册
+        =link_to"用户注册",signup_path
       %br
         .input-prepend
           %span.add-on(style="padding-bottom:2px;padding-top:1.7px")
@@ -18,8 +17,7 @@
             密码
           %input(style="text;width:338px" )
         .text-right
-          %a.btn-style.btn-1
-            忘记密码
+          =link_to"忘记密码"
       .text-center
         %button(class="btn btn-primary" style="width:150px" )
           登录
