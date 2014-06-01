@@ -9,7 +9,6 @@ class UsersController < ApplicationController
       cookies.permanent[:token]=user.token;
     end
   end
-
   def logout
     cookies.delete(:token)
     redirect_to :login
@@ -18,7 +17,6 @@ class UsersController < ApplicationController
   def signup
     @user = User.new
   end
-
 
   def welcome
   end
@@ -32,4 +30,12 @@ class UsersController < ApplicationController
       render :signup
     end
   end
+
+  def forget_account
+
+  end
+
 end
+
+
+
