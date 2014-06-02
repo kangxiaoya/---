@@ -2,7 +2,7 @@ zh-CN:
   activerecord:
     attributes:
       user:
-        user_name: ""
+        name: ""
         password: ""
         password_confirmation: ""
         forget_password_question: ""
@@ -11,16 +11,16 @@ zh-CN:
       models:
         user:
           attributes:
-            user_name:
-              blank: "请将注册信息填写完整"
+            name:
+              blank: "名字不能为空"
               taken: "该账号已注册"
             password:
-              blank: "请将注册信息填写完整"
+              blank: "密码不能为空"
             password_confirmation:
               confirmation: "两次密码输入不一致，请重新输入"
             password_digest:
-              blank: "不能为空"
+              blank: "3请将注册信息填写完整"
             forget_password_question:
-              blank: "请将注册信息填写完整"
+              blank: "4请将注册信息填写完整"
             question_answer:
-              blank: "请将注册信息填写完整"
+              blank: "5请将注册信息填写完整"
