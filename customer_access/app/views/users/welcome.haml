@@ -1,12 +1,9 @@
-.container(style="margin:30px 50px" )
- .row
-  %h1
-   活动通
- .text-right
- .row(style="width:1320px" )
- -if current_user
-     .text-right
-      你好,
-      =current_user.name
-      =link_to "退出",logout_path.method:"delete"
-
+.container(style="float:left;margin-top:10px;padding-left:50px" )
+  .row
+    %h1
+      活动通
+-if current_user
+  .text-right(style="float:right;margin-top:10px;padding-right:30px" )
+    你好,
+    =current_user.name
+    =link_to "退出",logout_path,method: "delete"
