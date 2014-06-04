@@ -17,10 +17,5 @@ class User < ActiveRecord::Base
   end
 
 
-  #def user_params
-  #  params.require(:user).permit(:name, :password, :password_confirmation, :forget_password_question, :question_answer, :token)
-  #end
-
-
 end
 

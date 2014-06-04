@@ -10,30 +10,34 @@
         =link_to"用户登录" ,login_path
       %br
       = form_for @user do |f|
-        .input-prepend
-          %span.add-on(style="width:84px;96px" )
+        .input-group
+          %span.input-group-addon(style="width:109px" )
             帐号
-          = f.text_field :name, :class=>'form-control',:style=>'width:342px;'
-        .input-prepend
-          %span.add-on(style="width:84px;96px")
+          = f.text_field :name, :class=>'form-control',:style=>'width:379px'
+        %br
+        .input-group
+          %span.input-group-addon(style="width:109px" )
             请设置密码
-          = f.password_field :password, :class=>'form-control',:style=>'width:342px;'
-        .input-prepend
-          %span.add-on(style="width:84px;96px")
+          = f.password_field :password, :class=>'form-control',:style=>'width:379px'
+        %br
+        .input-group
+          %span.input-group-addon(style="width:109px" )
             请确认密码
-          = f.password_field :password_confirmation, :class=>'form-control',:style=>'width:342px;'
-        .input-prepend
-          %span.add-on(style="width:84px;96px" )
+          = f.password_field :password_confirmation, :class=>'form-control',:style=>'width:379px'
+        %br
+        .input-group
+          %span.input-group-addon
             忘记密码问题
-          = f.text_field :forget_password_question, :class=>'form-control',:style=>'width:342px;'
-        .input-prepend
-          %span.add-on(style="width:84px;96px" )
+          = f.text_field :forget_password_question, :class=>'form-control'
+        %br
+        .input-group
+          %span.input-group-addon
             忘记密码答案
-          = f.text_field :question_answer, :class=>'form-control',:style=>'width:342px;'
+          = f.text_field :question_answer, :class=>'form-control'
         %br
         - if @user.errors.any?
-          .alert.alert-danger
+          .alert.alert-danger(class='text-center'style="float:center;padding-top:0px;padding-bottom:0px;padding-left:90px;padding-right:90px;margin-bottom:0px" )
             =@user.errors.full_messages.first
         %br
-        =f.submit '注册',:class => 'btn-local',:style=>'width:20%'
+        =f.submit '注册',:class => ' btn-info',:style=>' width:116px;margin-left: 203px;margin-right: 203px;'
 

@@ -8,17 +8,18 @@
       .text-right
         =link_to"用户注册",signup_path
       %br
-        .input-prepend
-          %span.add-on(style="padding-bottom:2px;padding-top:1.7px")
+        .input-group
+          %span.input-group-addon(style="padding-bottom:2px;padding-top:1.7px")
             帐号
-          %input(style="text;width:338px" )
-        .input-prepend
-          %span.add-on(style="padding-bottom:2px;padding-top:1.7px")
+          %input(style="text;width:287px" )
+        %br
+        .input-group
+          %span.input-group-addon(style="padding-bottom:2px;padding-top:1.7px")
             密码
-          %input(style="text;width:338px" )
+          %input(style="text;width:287px" )
         .text-right
           =link_to"忘记密码"
       .text-center
-        %button(class="btn btn-local" style="width:150px padding-" )
+        %btn(class="btn btn-info" style="width:150px;padding-bottom:3px;padding-top:3px")
           登录
 
