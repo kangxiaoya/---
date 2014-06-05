@@ -7,12 +7,10 @@ class UsersController < ApplicationController
   def create_login_session
     user =User.find_by_name(params[:name])
     if user&&user.authenticate(params[:password])
-      p'111111111111111'
-      p user.authenticate(params[:password])
-      p'222222222222222222'
       cookies.permanent[:token]=user.token
       redirect_to :welcome
-    else flash[:error]="用户名或密码错误"
+    else
+      flash[:error]="用户名或密码错误"
       redirect_to :root
     end
   end
@@ -27,12 +25,14 @@ class UsersController < ApplicationController
   end
 
   def welcome
+    if current_user
+      @users=User.all
+    end
   end
 
   def create
 
     @user=User.new(params[:user])
-
 
 
     if @user.save

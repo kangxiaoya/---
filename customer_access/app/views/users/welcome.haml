@@ -3,7 +3,33 @@
     %h1
       活动通
 -if current_user
+  %br
   .text-right(style="float:right;margin-top:10px;padding-right:30px" )
     你好,
     =current_user.name
     =link_to "退出",logout_path,method: "delete"
+    %br
+-if current_user[:name]=='Administrator'
+  .panel-default(style="margin:0 auto;width:1000px;height:10px;margin-top:100px" )
+    .panel-heading
+      %h3
+        用户管理
+    .panel-body
+      %table.top-right
+        %thead
+          %tr
+            %th 编号
+            %th 用户名
+            %th
+              %th 操作
+        %tbody
+          =@users.each do|user|
+            %tr
+              %td
+                =user.id-20
+              %td
+                =user.name
+              %td
+                =link_to"删除"
+                %td
+                  =link_to"修改密码"
