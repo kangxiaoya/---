@@ -2,24 +2,26 @@
   .row
     %h1
       活动通
-  .row(style="width:1320px" )
-    .sign_up-box
-      %h4 用户登录
-      .text-right
-        =link_to"用户注册",signup_path
-      %br
-        .input-group
-          %span.input-group-addon(style="padding-bottom:2px;padding-top:1.7px")
-            帐号
-          %input(style="text;width:287px" )
-        %br
-        .input-group
-          %span.input-group-addon(style="padding-bottom:2px;padding-top:1.7px")
-            密码
-          %input(style="text;width:287px" )
+    .row(style="width:1320px" )
+      .sign_up-box
+        %h4 用户登录
         .text-right
-          =link_to"忘记密码"
-      .text-center
-        %btn(class="btn btn-info" style="width:150px;padding-bottom:3px;padding-top:3px")
-          登录
-
+          =link_to"用户注册",signup_path
+        %br
+        =form_tag "/create_login_session" do
+          .input-group
+            %span.input-group-addon(style="padding-bottom:2px;padding-top:1.7px")
+              账号
+            = text_field_tag :name, params[:name]
+          %br
+          .input-group
+            %span.input-group-addon(style="padding-bottom:2px;padding-top:1.7px")
+              密码
+            = password_field_tag :password, params[:password]
+          - if flash[:error]
+            .alert.alert-danger
+              = flash[:error]
+          .text-right
+            =link_to"忘记密码"
+          %br
+          = submit_tag "登录", :class => ' btn-info'

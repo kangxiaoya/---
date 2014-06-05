@@ -5,14 +5,14 @@
   .row(style="width:1320px" )
     .sign-up-box
       .text-left
-      %h4 新用户注册
+        %h4 新用户注册
       .text-right
         =link_to"用户登录" ,login_path
       %br
       = form_for @user do |f|
         .input-group
           %span.input-group-addon(style="width:109px" )
-            帐号
+            账号
           = f.text_field :name, :class=>'form-control',:style=>'width:379px'
         %br
         .input-group
