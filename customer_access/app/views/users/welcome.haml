@@ -12,27 +12,32 @@
 -if current_user[:admin]=='admin'
   .panel-default(style="margin:0 auto;height:10px;margin-top:75px;margin-left:30px;margin-right:30px" )
     .panel-heading(style="border-top-right-radius: 5px; border-top-left-radius: 5px;" )
-      %h2.panel-title
+      %h1.panel-title(style="font-size:20px" )
         用户管理
         %button(style="font-size:14px;margin-left:20px;padding-left:0px;padding-right:0px"  )+添加用户
     .panel-body(style="padding-bottom:0px;padding-top:0px" )
-    %table.table
+    %table.table(style="border:1px solid #dddddd;width:100%" )
       %thead
         %tr
-          %th 编号
-          %th 用户名
-          %th 操作
+          %th(style="text-align:center" )
+            编号
+          %th(style="text-align:center" )
+            用户名
+          %th(style="text-align:center" )
+            操作
 
       %tbody
         -@users.each do|user|
           %tr
-            %td(style="text-center" )
+            %td(style="text-align:center" )
               =user.id-29
-            %td(style="text-center" )
+            %td(style="text-align:center" )
               =user.name
-            %td(style="text-center" )
-              =link_to"删除"
-              =link_to"修改密码"
+            %td(style="text-align:center;padding-left:10px" )
+              %a(style = "padding-right: 10px")
+                =link_to"删除"
+              %a(style = "padding-left: 10px")
+                =link_to"修改密码"
     .panel.footer(style="float:right" )
       .digg_pagination
-        = h will_paginate @users, :previous_label=> '<<', :next_label=> '>>'
+        = will_paginate @users, :previous_label=> '<<', :next_label=> '>>'
