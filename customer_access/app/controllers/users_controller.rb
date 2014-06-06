@@ -26,15 +26,12 @@ class UsersController < ApplicationController
 
   def welcome
     if current_user
-      @users=User.all
+      @users=User.paginate(:page => params[:page], :per_page => 10)
     end
   end
 
   def create
-
     @user=User.new(params[:user])
-
-
     if @user.save
       cookies.permanent[:token]=@user.token
       redirect_to :welcome
@@ -42,6 +39,7 @@ class UsersController < ApplicationController
       render :signup
     end
   end
+
 
 end
 
