@@ -1,4 +1,4 @@
-.container(style="float:left;margin-top:10px;padding-left:50px" )
+.container(style="float:left;margin-top:10px;padding-left:50px")
   .row
     %h1
       活动通
@@ -8,8 +8,14 @@
     你好,
     =current_user.name
     =link_to "退出",logout_path,method: "delete"
+  %br
+    %br
+  %ol.breadcrumb(style="text-align-center" )
+    %li
+      %a{:href => "/"}首页
+    %li.active添加用户
   .row(style="width:1320px" )
-    .sign-up-box
+    .sign-up-box(style="height:400px" )
       = form_for @user do |f|
         .input-group
           %span.input-group-addon(style="width:109px" )

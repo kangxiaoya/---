@@ -43,7 +43,13 @@ class UsersController < ApplicationController
   end
 
   def add_users
-    @user =User.new
+    @user=User.new(params[:user])
+    if @user.save
+      cookies.permanent[:token]=@user.token
+      redirect_to :welcome
+    else
+      render :add_users
+    end
   end
 
 
