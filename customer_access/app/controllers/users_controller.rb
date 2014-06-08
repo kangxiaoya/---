@@ -25,8 +25,10 @@ class UsersController < ApplicationController
   end
 
   def welcome
+    session[:num] = params[:page] ? params[:page].to_i : 1
     if current_user
-      @users=User.paginate(:page => params[:page], :per_page => 10)
+      @users=User.paginate(:page => params[:page], :per_page => 10).where(:is_admin=>false).all
+
     end
   end
 

@@ -1,0 +1,2 @@
+      invoke  active_record
+      create    db/migrate/20140608021647_remove_is_admin_from_users.rb

@@ -5761,6 +5761,8 @@ a.list-group-item.active:focus .list-group-item-text {
 
 .panel-group .panel-heading + .panel-collapse .panel-body {
   border-top: 1px solid #dddddd;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px
 }
 
 .panel-group .panel-footer {
@@ -5769,6 +5771,8 @@ a.list-group-item.active:focus .list-group-item-text {
 
 .panel-group .panel-footer + .panel-collapse .panel-body {
   border-bottom: 1px solid #dddddd;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px
 }
 
 .panel-default {
