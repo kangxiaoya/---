@@ -27,7 +27,7 @@ class UsersController < ApplicationController
   def welcome
     session[:num] = params[:page] ? params[:page].to_i : 1
     if current_user
-      @users=User.paginate(:page => params[:page], :per_page => 10).where(:is_admin=>false).all
+      @users=User.paginate(:page => params[:page], :per_page => 10).where(:is_admin => false).all
 
     end
   end
@@ -40,6 +40,10 @@ class UsersController < ApplicationController
     else
       render :signup
     end
+  end
+
+  def add_users
+    @user =User.new
   end
 
 

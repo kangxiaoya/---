@@ -14,7 +14,8 @@
     .panel-heading(style="border-top-right-radius: 5px; border-top-left-radius: 5px;" )
       %h1.panel-title(style="font-size:20px" )
         用户管理
-        %button(style="font-size:14px;margin-left:20px;padding-left:0px;padding-right:0px"  )+添加用户
+        %button(style="font-size:14px;margin-left:20px;padding-left:0px;padding-right:0px"  )
+        =link_to"+添加用户",add_users_path
     .panel-body(style="padding-bottom:0px;padding-top:0px" )
     %table.table(style="border:1px solid #dddddd;width:100%" )
       %thead
