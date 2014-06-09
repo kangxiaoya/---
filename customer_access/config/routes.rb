@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root to: "users#login"
   get "/signup" => "users#signup", :as => 'signup';
   get "/login" => "users#login", :as => 'login';
-  get "/add_users" => "users#add_users", :as => "add_users";
+  get "/add_users" => "admin#add_users", :as => "add_users";
   post "/create_login_session" => "users#create_login_session"
   delete 'logout' => "users#logout", :as => "logout"
   get '/welcome' => "users#welcome", :as => "welcome";
